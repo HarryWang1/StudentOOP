@@ -42,7 +42,7 @@ void print_vector(const vector<int>& v) {
  * Output should look like "x = 9, y = 2".
  * */
 void print_coords(coord pos) {
-	cout<< "X = "<< pos.x << ", y =" << coord.y << endl;
+	cout<< "X = "<< pos.x << ", y =" << pos.y << endl;
 }
 
 /*
