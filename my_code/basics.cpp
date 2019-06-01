@@ -100,7 +100,7 @@ void say(std::string s) {
  * Use a ranged for to pull a string apart into its bits.
  * */
 void pull_apart_string(std::string s) {
-	for (std:: string s2: s){
+	for (char s2: s){
 		cout << s2 << endl;
 	}
 }
