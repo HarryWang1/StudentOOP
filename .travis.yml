@@ -1,20 +1,13 @@
-language: cpp
-
-compiler:
-  - clang
-
-script:
-  - make tests
-
-
 notifications:
-  email:
-    recipients:
-      - rz1276@nyu.edu
-    on_success: always
-    on_failure: never
 
-    recipients:
-      - hw1714@nyu.edu
-    on_success: always
-    on_failure: always  
+    email:
+
+        recipients:
+
+            - rz1276@nyu.edu
+
+            - hw1714@nyu.edu
+
+        on_success: always
+
+        on_failure: never
