@@ -9,7 +9,7 @@ void inc_by_value(int n) {
 
 
 void inc_with_pointer(int* iptr) {
-	++ iptr;
+	++*iptr;
 }
 
 
@@ -23,18 +23,18 @@ Thing** create_array_of_things(int n) {
 	for(int i = 0; i < n; ++i){
 		ptr[i] = new Thing(i);
 	}
-    return nullptr;
+    return ptr;
 }
 
 void print_all_things(Thing** things, int n) {
 	for( int i = 0; i < n; ++i){
-		cout<< things[i]->value <<endl;
+		cout<< things[i]->val <<endl;
 	}
 }
 
 void double_all_things(Thing** things, int n) {
 	for(int i = 0; i < n; ++i){
-		things[i] -> value *= 2
+		things[i] -> val *= 2;
 	}
 }
 
@@ -46,7 +46,7 @@ void delete_all_things(Thing** things, int n) {
 
 
 void assignTA(Student& s, Student& ta) {
-	s.ta = &ta
+	s.ta = &ta;
 }
 
 void printTAs(vector<Student> students) {
