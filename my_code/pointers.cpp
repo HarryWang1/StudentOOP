@@ -46,7 +46,7 @@ void delete_all_things(Thing** things, int n) {
 
 
 void assignTA(Student* s, Student* ta) {
-	s->ta = &ta;
+	s->ta = ta;
 }
 
 void printTAs(vector<Student*> students) {
