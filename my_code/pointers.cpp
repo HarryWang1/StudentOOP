@@ -51,6 +51,9 @@ void assignTA(Student& s, Student& ta) {
 
 void printTAs(vector<Student> students) {
 	for(Student s : students){
-		cout << (s.ta) -> name << endl;
+		if (s->ta != nullptr){
+			cout << (s.ta) -> name << endl;
+		}
+		else cout << "No TA for this student" <<endl;
 	}
 }
