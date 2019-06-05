@@ -26,6 +26,6 @@ struct Student {
 };
 
 void assignTA(Student* s, Student* ta);
-void printTAs(std::vector<Student*> students);
+void printTAs(std::vector<Student*>& students);
 
 #endif

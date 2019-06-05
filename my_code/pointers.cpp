@@ -49,7 +49,7 @@ void assignTA(Student* s, Student* ta) {
 	s->ta = ta;
 }
 
-void printTAs(vector<Student*> students) {
+void printTAs(vector<Student*>& students) {
 	for(Student* s : students){
 		if (s->ta != nullptr){
 			cout << (s->ta) -> name << endl;
