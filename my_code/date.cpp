@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+#include "date.h"
+#include <vector>
+using namespace std;
+
+Date:: Date(int d, int m, int y) : day(d), month(m), year(y){}
+
+std::ostream& operator<<(std::ostream& os, const Date& date){
+	os << date.day << "/" << date.month << "/" << date.year <<endl;
+	return os;
+}
