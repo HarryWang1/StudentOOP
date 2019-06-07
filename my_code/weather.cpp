@@ -22,6 +22,11 @@ void Weather:: set_rating(int new_rating){
 	rating = new_rating;
 }
 
+void Weather:: add_reading(WReading wr){
+	wreadings.push_back(wr);
+
+}
+
 std:: ostream& operator<<(std::ostream& os, const Weather& w){
 	os<<w.get_name() << "rating: " << w.get_rating() << ", GPS:" << w.my_loc <<endl;
 	return os;
@@ -32,3 +37,16 @@ std:: ostream& operator<<(std::ostream& os, const GPS& gps){
 	return os;
 }
 
+std::ostream& operator<<(std::ostream& os, const Date& date){
+	os << date.day << "/" << date.month << "/" << date.year <<endl;
+	return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const Weather& w){
+	os << "name: " << w.station_nm << "Rating: "<< w.rating <<"Loc: " << w.my_loc <<endl;
+	for(WReading w : wreadings){
+		os << w << " ";
+	}
+	os << endl;
+	return os;
+}
