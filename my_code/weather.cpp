@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "weather.h"
-
+#include <vector>
 using namespace std;
 
 /*
@@ -9,6 +9,7 @@ using namespace std;
  * */
 Weather::Weather(std::string nm, GPS loc) : station_nm(nm), my_loc(loc) {}
 
+Date:: Date(int d, int m, int y) : day(d), month(m), year(y){}
 
 string Weather::get_name() const {
     return station_nm;
@@ -24,13 +25,8 @@ void Weather:: set_rating(int new_rating){
 
 void Weather:: add_reading(WReading wr){
 	wreadings.push_back(wr);
-
 }
 
-std:: ostream& operator<<(std::ostream& os, const Weather& w){
-	os<<w.get_name() << "rating: " << w.get_rating() << ", GPS:" << w.my_loc <<endl;
-	return os;
-}
 
 std:: ostream& operator<<(std::ostream& os, const GPS& gps){
 	os << gps.latitude << "," << gps.longitude <<endl;
@@ -42,10 +38,15 @@ std::ostream& operator<<(std::ostream& os, const Date& date){
 	return os;
 }
 
+std::ostream& operator<<(std::ostream& os, const WReading& wr){
+	os << "date: " << wr.date << ", temp: " << wr.temperature << ", humi: " << wr.humidity  << ", wind: " << wr.windspeed <<endl;
+	return os;
+}
+
 std::ostream& operator<<(std::ostream& os, const Weather& w){
 	os << "name: " << w.station_nm << "Rating: "<< w.rating <<"Loc: " << w.my_loc <<endl;
-	for(WReading w : wreadings){
-		os << w << " ";
+	for(WReading wr : w.wreadings){
+		os << wr << " ";
 	}
 	os << endl;
 	return os;
