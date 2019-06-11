@@ -32,7 +32,6 @@ std:: ostream& operator<<(std::ostream& os, const GPS& gps){
 	return os;
 }
 
-
 std::ostream& operator<<(std::ostream& os, const WReading& wr){
 	os << "date: " << wr.date << ", temp: " << wr.temperature << ", humi: " << wr.humidity  << ", wind: " << wr.windspeed <<endl;
 	return os;

@@ -14,6 +14,8 @@ struct GPS {
 
 std::ostream& operator<<(std::ostream& os, const GPS& gps);
 
+
+
 class WReading {
     friend std::ostream& operator<<(std::ostream& os, const WReading& wr);
  public:
@@ -25,6 +27,8 @@ class WReading {
     double humidity;
     double windspeed;
 };
+
+
 
 
 const int UNRATED = -1;
