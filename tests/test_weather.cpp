@@ -32,6 +32,9 @@ void get_wreadings(Weather& w) {
 
 
 int main() {
+    WReading testTemp = WReading(Date(1,1,2019),0,50,10);
+    double freezingF = testTemp.get_tempF();
+    assert(freezingF == 32.0);
     Weather irkutsk = Weather("Irkutsk", GPS(46.3, 67.2));
 
     string filenm;
