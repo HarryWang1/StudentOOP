@@ -8,6 +8,41 @@ using namespace std;
 const double F_TO_C = 5/9;
 const double C_TO_F = 9/5;
 
+Image:: Image(int w, int h, std::string flnm): width(w), height(h),filename(flnm){}
+
+Image:: Image(const Image& img2){
+	delete[] image_buf;
+	image_buf = new char[image_sz()];
+	for(int i = 0; i < image_sz(); ++i){
+		image_buf[i] = img2.image_buf[i];
+	}
+}
+
+Image:: ~Image(){
+	delete[] image_buf;
+}
+
+Image& Image:: operator=(const Image& img2){
+	if(&img2 != this){
+		delete[] image_buf;
+		image_buf = new char[image_sz()];
+		for(int i = 0; i < image_sz(); ++i){
+			image_buf[i] = img2.image_buf[i];
+		}
+	}
+	return *this;
+}
+
+int Image:: image_sz(){
+	return height*width;
+}
+
+void display(const std::string& s){
+	cout<< s << endl;
+}
+
+
+
 double WReading:: get_tempF(){
 	return ((temperature*C_TO_F)+32);
 }
