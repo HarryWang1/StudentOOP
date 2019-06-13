@@ -12,6 +12,20 @@ void vector:: vector(){
 
 
 void vector:: push_back(int val){
+	if (sz == capacity){
+		// get new array of capacity*2 and copy over old data, delete old array
+		capacity *= 2;
+		new_data = new int[capacity];
+		// coping old data
+		for (int i = 0; i < size(); i++){
+			new_data[i] = data[i];
+		}
+		// delete old array
+		// set ptr to new array
+		delete[] data;
+		data = new_data;
+		
+	}
 	data[sz++] = val;
 }
 
