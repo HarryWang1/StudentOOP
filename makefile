@@ -24,12 +24,19 @@ test_complex: $(TEST_DIR)/test_complex
 
 $(TEST_DIR)/test_complex: $(STUDENT_DIR)/complex.cpp $(TEST_DIR)/test_complex.cpp
 
+$(TEST_DIR)/test_image: $(STUDENT_DIR)/image.cpp $(TEST_DIR)/test_image.cpp
 
-tests: test_hello test_basics test_pointers test_complex
+
+tests: test_hello test_basics test_pointers test_image
 	tests/test_hello
 	tests/test_basics
 	tests/test_pointers
 	tests/test_complex
+	tests/test_image
+
+=======
+	# tests/test_pointers
+>>>>>>> parent of f8d887d... update makefile
 
 prod: tests
 	- git commit -a -m "new assignment done"
