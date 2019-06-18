@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void vector:: vector(){
+MyVec:: MyVec(){
 	sz = 0;
 	capacity = DEF_CAPACITY;
 	data = new int[DEF_CAPACITY];
@@ -11,7 +11,7 @@ void vector:: vector(){
 }
 
 
-void vector:: push_back(int val){
+void MyVec:: push_back(int val){
 	if (sz == capacity){
 		// get new array of capacity*2 and copy over old data, delete old array
 		capacity *= 2;
@@ -30,14 +30,8 @@ void vector:: push_back(int val){
 	data[sz++] = val;
 }
 
-void print_vector(vector v){
-	for(int i = 0; i < v.size(); i++){
-		cout<<v.data[i] <<" ";
-	}
-	cout << endl;
-}
 
-vector& vector:: operator = (const vector& v2){
+MyVec& MyVec:: operator = (const MyVec& v2){
 	if (this != &v2){
 		delete[] data;
 		// Remember to copy over the capacity and size
@@ -52,7 +46,7 @@ vector& vector:: operator = (const vector& v2){
 	return *this;
 }
 
-vector:: vector(const vector& v2){
+MyVec:: MyVec(const MyVec& v2){
 	capacity = v2.capacity;
 	sz = v2.size();
 	data = new int[capacity];
@@ -62,9 +56,26 @@ vector:: vector(const vector& v2){
 	}
 }
 
-vector::~vector(){delete[] data;}
+MyVec::~MyVec(){delete[] data;}
 
 
+void print_vector(MyVec v){
+	for(int i = 0; i < v.size(); i++){
+		cout<<v.data[i] <<" ";
+	}
+	cout << endl;
+}
+
+bool operator==(MyVec& v1, MyVec& v2){
+	if(v1.size()!=v2.size()) return false;
+	else{
+		for(int i = 0; i < v1.size();++i){
+			if(v1[i]!= v2[i]) return false;
+		}
+	}
+	return true;
+
+}
 
 
 

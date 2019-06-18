@@ -20,3 +20,4 @@ private:
 }
 
 void print_vector(vector v);
+bool operator==(MyVec& v1, MyVec& v2);
