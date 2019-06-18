@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "weather.h"
+#include "image.h"
 #include <vector>
 using namespace std;
 

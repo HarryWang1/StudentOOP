@@ -21,10 +21,11 @@ void vector:: push_back(int val){
 			new_data[i] = data[i];
 		}
 		// delete old array
-		// set ptr to new array
 		delete[] data;
+
+		// set ptr to new array
 		data = new_data;
-		
+
 	}
 	data[sz++] = val;
 }
@@ -35,4 +36,41 @@ void print_vector(vector v){
 	}
 	cout << endl;
 }
+
+vector& vector:: operator = (const vector& v2){
+	if (this != &v2){
+		delete[] data;
+		// Remember to copy over the capacity and size
+		capacity = v2.capacity;
+		sz = v2.size();
+		data = new int[capacity];
+		// copy over existing data
+		for(int i = 0; i < size(); ++i){
+			data[i] = v2.data[i];
+		}
+	}
+	return *this;
+}
+
+vector:: vector(const vector& v2){
+	capacity = v2.capacity;
+	sz = v2.size();
+	data = new int[capacity];
+	// copy over existing data
+	for(int i = 0; i < size(); ++i){
+		data[i] = v2.data[i];
+	}
+}
+
+vector::~vector(){delete[] data;}
+
+
+
+
+
+
+
+
+
+
 
