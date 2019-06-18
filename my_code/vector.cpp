@@ -15,7 +15,7 @@ void MyVec:: push_back(int val){
 	if (sz == capacity){
 		// get new array of capacity*2 and copy over old data, delete old array
 		capacity *= 2;
-		new_data = new int[capacity];
+		int* new_data = new int[capacity];
 		// coping old data
 		for (int i = 0; i < size(); i++){
 			new_data[i] = data[i];
@@ -61,7 +61,7 @@ MyVec::~MyVec(){delete[] data;}
 
 void print_vector(MyVec v){
 	for(int i = 0; i < v.size(); i++){
-		cout<<v.data[i] <<" ";
+		cout<<v[i] <<" ";
 	}
 	cout << endl;
 }
