@@ -29,3 +29,12 @@ private:
     char* image_buf;
     void copy_fields(const Image& img2);
 };
+
+
+class Gif: public Image{
+public:
+
+    Gif(int w, int h, string flnm, int cl = 0): Image(w,h,flnm), compression_level(cl){}
+private:
+    int compression_level;
+}
