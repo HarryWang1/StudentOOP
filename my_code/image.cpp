@@ -35,8 +35,8 @@ int Image:: image_sz(){
     return height*width;
 }
 
-void display(const std::string& s){
-    cout<< s << endl;
+void display(){
+    cout<< "In Image" << endl;
 }
 
 void make_images1(Image& img1) {

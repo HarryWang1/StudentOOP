@@ -1,4 +1,4 @@
-
+using namespace std;
 class Image {
 public:
     Image(int w, int h, std::string flnm);
@@ -12,7 +12,7 @@ public:
      * Setting `display() = 0` here makes this an abstract
      * class that can't be implemented.
      * */
-    void display(const std:: string& s);
+    virtual void display();
     /*
      * If we don't want virtual method lookup, we
      * could just declare:
@@ -34,7 +34,27 @@ private:
 class Gif: public Image{
 public:
 
-    Gif(int w, int h, string flnm, int cl = 0): Image(w,h,flnm), compression_level(cl){}
+    Gif(int w, int h, std:: string flnm, int cl = 0): Image(w,h,flnm), compression_level(cl){}
+    void display(){ cout << "In GIF" <<endl;}
 private:
     int compression_level;
-}
+};
+
+class Jpeg: public Image{
+public:
+    Jpeg(int w, int h, std:: string flnm):Image(w,h,flnm){}
+    void display(){ cout << "In Jpeg" <<endl;}
+};
+
+class Png:public Image{
+public:
+    Png(int w, int h, std:: string flnm): Image(w,h,flnm){}
+    void display(){ cout << "In Png" <<endl;}
+};
+
+
+
+
+
+
+
