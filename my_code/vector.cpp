@@ -16,7 +16,6 @@ MyVec:: MyVec(int sz, int val):sz(sz){
 	for(int i = 0; i < sz; ++i){
 		data[i] = val;
 	}
-
 }
 
 void MyVec:: push_back(int val){
