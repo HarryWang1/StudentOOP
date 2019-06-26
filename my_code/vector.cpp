@@ -10,6 +10,14 @@ MyVec:: MyVec(){
 
 }
 
+MyVec:: MyVec(int sz, int val):sz(sz){
+	capacity = sz;
+	data = new int[capacity];
+	for(int i = 0; i < sz; ++i){
+		data[i] = val;
+	}
+
+}
 
 void MyVec:: push_back(int val){
 	if (sz == capacity){
@@ -58,13 +66,21 @@ MyVec:: MyVec(const MyVec& v2){
 
 MyVec::~MyVec(){delete[] data;}
 
-
-void print_vector(MyVec v){
-	for(int i = 0; i < v.size(); i++){
-		cout<<v[i] <<" ";
-	}
-	cout << endl;
+MyVec::Iterator MyVec::begin() const {
+    return Iterator(data);
 }
+
+MyVec::Iterator MyVec::end() const {
+    return Iterator(data+sz);
+}
+
+	
+void print_vector(const MyVec& v) {
+    for (int i : v) cout << i << " ";
+    cout << endl;
+}
+
+
 
 bool operator==(MyVec& v1, MyVec& v2){
 	if(v1.size()!=v2.size()) return false;
