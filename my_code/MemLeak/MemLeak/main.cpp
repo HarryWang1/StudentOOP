@@ -12,6 +12,9 @@ struct Thing{
     Thing(int n){
         iarr = new int[n];
     }
+    ~Thing(){
+        delete[] iarr;
+    }
 };
 const int OUTER = 10000000;
 const int INNER = 100000;
@@ -21,7 +24,8 @@ int main() {
         Thing** things = new Thing*[INNER];
         for(int j = 0; j<INNER; ++j){
             things[j] = new Thing(INNER);
+            delete things[j];
         }
+        delete[] things;
     }
-   
 }

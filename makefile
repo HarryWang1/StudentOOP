@@ -39,7 +39,11 @@ $(TEST_DIR)/test_templ_ll: $(TEST_DIR)/test_templ_ll.cpp
 test_tvector: $(TEST_DIR)/test_tvector
 $(TEST_DIR)/test_tvecor: $(TEST_DIR)/test_tvector.cpp
 
-tests: test_hello test_basics test_pointers test_complex test_vector test_llist test_tvector
+$(TEST_DIR)/test_bst: $(STUDENT_DIR)/bst.cpp $(TEST_DIR)/test_bst.cpp
+
+test_bst: $(TEST_DIR)/test_bst
+
+tests: test_hello test_basics test_pointers test_complex test_vector test_llist test_tvector test_bst
 	tests/test_hello
 	tests/test_basics
 	tests/test_pointers
@@ -47,6 +51,7 @@ tests: test_hello test_basics test_pointers test_complex test_vector test_llist 
 	tests/test_vector
 	tests/test_llist
 	tests/test_tvector
+	tests/test_bst
 
 prod: tests
 	- git commit -a -m "new assignment done"
