@@ -12,9 +12,6 @@ struct Thing{
     Thing(int n){
         iarr = new int[n];
     }
-    ~Thing(){
-        delete[] iarr;
-    }
 };
 const int OUTER = 10000000;
 const int INNER = 100000;
